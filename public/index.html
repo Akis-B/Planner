@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Simple Planner</h1>
+        <p>Plan your day and keep everything in sync with Firebase.</p>
+      </header>
+
+      <section class="app__form">
+        <form id="task-form">
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" placeholder="What do you need to do?" required />
+          </div>
+
+          <div class="field">
+            <label for="details">Details</label>
+            <textarea id="details" name="details" rows="3" placeholder="Add any notes"></textarea>
+          </div>
+
+          <div class="field field--inline">
+            <div>
+              <label for="date">Due date</label>
+              <input id="date" name="date" type="date" />
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input id="time" name="time" type="time" />
+            </div>
+          </div>
+
+          <button type="submit" class="primary">Add task</button>
+        </form>
+      </section>
+
+      <section class="app__tasks">
+        <h2>Upcoming tasks</h2>
+        <ul id="task-list"></ul>
+        <p id="empty-state" class="empty">Add a task to get started.</p>
+      </section>
+    </main>
+
+    <script id="firebase-config" type="application/json">
+      {
+        "apiKey": "YOUR_API_KEY",
+        "authDomain": "YOUR_AUTH_DOMAIN",
+        "projectId": "YOUR_PROJECT_ID",
+        "storageBucket": "YOUR_STORAGE_BUCKET",
+        "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
+        "appId": "YOUR_APP_ID"
+      }
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
